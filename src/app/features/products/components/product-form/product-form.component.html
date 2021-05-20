@@ -1,0 +1,10 @@
+<h1>{{ title }}</h1>
+
+<app-input label="Titulo"></app-input>
+<app-input label="Descrição"></app-input>
+<app-switch-button label="Promocional"></app-switch-button>
+
+<div class="btns-wrapper">
+  <app-button text="Voltar" context="outline" (clicked)="return()"></app-button>
+  <app-button text="{{ buttonText }}" context="full"></app-button>
+</div>

@@ -1,0 +1,34 @@
+@import "theme";
+
+:host {
+  padding: 8px;
+  background: $violet-ryb;
+  border-radius: 3px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  label {
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    border: none;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    color: $white;
+    font-weight: bold;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+}

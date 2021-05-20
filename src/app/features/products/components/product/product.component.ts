@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -8,6 +7,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class ProductComponent implements OnInit {
   @Input() title = '';
+  @Input() description = '';
+  @Input() promotional = false;
+  @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
   constructor() {}
 

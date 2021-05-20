@@ -1,4 +1,6 @@
 /* SCSS HEX */
+$white: #fff;
+$black: #000;
 $fandango-pink: #d55d92ff;
 $mulberry-crayola: #c05299ff;
 $byzantine: #ac46a1ff;
@@ -128,4 +130,13 @@ $gradient-radial: radial-gradient(
   #571089ff,
   #47126bff,
   #0b050fff
+);
+$gradient-button: linear-gradient(
+  0deg,
+  #d55d92ff,
+  #ac46a1ff,
+  #973aa8ff,
+  #6d23b6ff,
+  #6411adff,
+  #571089ff
 );

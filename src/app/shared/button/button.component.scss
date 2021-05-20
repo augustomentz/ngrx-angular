@@ -1,0 +1,33 @@
+@import "theme";
+
+:host {
+  button {
+    font-weight: 600;
+    transition: all ease-in-out 150ms;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 40px;
+
+    &.full {
+      background: $violet-ryb;
+      color: $white;
+
+      &:hover {
+        background: $blue-violet-color-wheel-2;
+      }
+    }
+
+    &.outline {
+      background: transparent;
+      border: 1px solid $violet-ryb;
+      color: $violet-ryb;
+
+      &:hover {
+        background: $violet-ryb;
+        color: $white;
+      }
+    }
+  }
+}

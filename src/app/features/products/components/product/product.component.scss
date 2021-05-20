@@ -5,4 +5,62 @@
   padding: 20px;
   border-radius: 10px;
   background: $raisin-black-2;
+  color: $violet-ryb;
+  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+  position: relative;
+  overflow: hidden;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .promotion {
+      position: absolute;
+      left: -30px;
+      top: -30px;
+
+      .layer {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        background: $violet-ryb;
+      }
+
+      svg {
+        position: absolute;
+        top: 69%;
+        left: 69%;
+        transform: translate(-50%, -50%);
+        fill: $white;
+      }
+    }
+
+    .text-holder {
+      display: flex;
+      align-items: center;
+
+      .description {
+        color: $white;
+        margin-left: 20px;
+        font-size: 11px;
+      }
+    }
+
+    button {
+      cursor: pointer;
+
+      &:last-child {
+        margin: 0 0 0 10px;
+      }
+    }
+
+    svg {
+      fill: $violet-ryb;
+    }
+  }
+
+  &:hover {
+    transform: scale(1);
+  }
 }

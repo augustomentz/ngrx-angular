@@ -9,14 +9,29 @@ export interface State {
 }
 
 export const initialState: State = {
-  products: [{ id: 1, title: 'a', description: 'abc', promotional: true }],
+  products: [],
 };
 
 const reducer = createReducer(
   initialState,
-  on(create, (state: State, action: Action): any => {
-    console.log(state);
-    console.log(action);
+  on(create, (state: State, payload: Product): State => {
+    return {
+      ...state,
+      products:
+      [...state.products,
+        {
+          id: payload.id,
+          title: payload.title,
+          description: payload.description,
+          promotional: payload.promotional
+        }
+      ]
+    }
+  }),
+  on(remove, (state: State, { id }): State => {
+    const products = state.products.filter((product) => product.id !== id)
+
+    return { ...state, products: [...products] }
   })
 );
 

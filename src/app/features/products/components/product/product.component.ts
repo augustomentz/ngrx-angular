@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import * as ProductActionsType from '../../store/products.actions';
 
 @Component({
   selector: 'app-product',
@@ -6,13 +9,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
+  @Input() id = 0;
   @Input() title = '';
   @Input() description = '';
   @Input() promotional = false;
-  @Output() edit = new EventEmitter();
-  @Output() delete = new EventEmitter();
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
+
+  edit(): void {
+
+  }
+
+  delete(): void {
+    this.store.dispatch(ProductActionsType.remove({ id: 1 }));
+  }
 }

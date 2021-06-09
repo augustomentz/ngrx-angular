@@ -1,5 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '@core/types/product.type';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectProducts } from './store/products.selector';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  constructor(private router: Router) {}
+  products$: Observable<Product[]>;
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private store: Store) {}
+
+  ngOnInit(): void {
+    this.products$ = this.store.pipe(select(selectProducts));
+  }
 
   goTo(): void {
     this.router.navigate(['products/product']);

@@ -23,11 +23,12 @@
       "@shared/*": ["src/app/shared/*"],
       "@environment/*": ["src/environments/*"],
       "@styles/*": ["src/styles/*"]
-    }
+    },
+    "strictPropertyInitialization": false
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": false
   }
 }

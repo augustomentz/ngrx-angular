@@ -1,15 +1,14 @@
 <h1>Lista de produtos</h1>
 
-<app-product
-  title="TV LG 69 POLEGADAS"
-  description="A TV com maior definição que já existiu!"
-  [promotional]="true"
-></app-product>
-
-<app-product
-  title="TV LG 69 POLEGADAS"
-  description="A TV com maior definição que já existiu!"
-></app-product>
+<div class="product-wrapper" *ngIf="(products$ | async) as products">
+  <app-product
+    *ngFor="let product of products"
+    [id]="product.id"
+    [title]="product.title"
+    [description]="product.description"
+    [promotional]="product.promotional">
+  </app-product>
+</div>
 
 <div class="btn-wrapper">
   <app-button

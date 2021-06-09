@@ -9,12 +9,15 @@ import { ProductFormComponent } from '@features/products/components/product-form
 import { SharedModule } from '@shared/shared.module';
 
 import { productsFeatureKey, productsReducer } from './store/products.reducer';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [ProductsComponent, ProductComponent, ProductFormComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forFeature(productsFeatureKey, productsReducer),
   ],
 })

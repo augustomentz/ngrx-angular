@@ -23,6 +23,6 @@ export class ProductComponent implements OnInit {
   }
 
   delete(): void {
-    this.store.dispatch(ProductActionsType.remove({ id: 1 }));
+    this.store.dispatch(ProductActionsType.remove({ id: this.id }));
   }
 }
